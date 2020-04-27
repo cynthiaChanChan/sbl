@@ -1,0 +1,81 @@
+@import "../../sass/abstracts/abstracts.scss";
+
+.card {
+    @include center-by-flex;
+    flex-direction: column;
+    width: rem(386);
+    padding: rem(88) rem(40) rem(49);
+    background-color: $color-secondary-2;
+    position: relative;
+    @include respond("large") {
+        width: rem(300);
+        padding: rem(68) rem(20) rem(29);
+    }
+    @include respond("small") {
+        width: rem(270);
+    }
+
+    @include respond("extra-small") {
+        padding-top: rem(45);
+    }
+    &::before {
+        content: "";
+        display: block;
+        width: rem(215);
+        height: rem(13);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $color-primary;
+    }
+}
+
+.imgBox {
+    height: rem(120);
+    @include respond("extra-large") {
+        height: rem(100);
+    }
+    @include respond("medium") {
+        height: rem(60);
+    }
+    img {
+        display: block;
+        height: 100%;
+    }
+}
+
+.heading {
+    font-size: rem(40);
+    font-weight: 500;
+    color: $color-primary;
+    margin: rem(20);
+    text-align: center;
+    @include respond("extra-large") {
+        font-size: rem(30);
+    }
+    @include respond("medium") {
+        font-size: rem(24);
+    }
+    .sub_heading {
+        display: block;
+    }
+}
+
+.text {
+    color: $color-secondary;
+    font-size: rem(24);
+    line-height: 1.33;
+    flex: 1;
+    @include respond("extra-large") {
+        font-size: rem(20);
+    }
+
+    @include respond("medium") {
+        font-size: rem(16);
+    }
+}
+
+.center {
+    text-align: center;
+}

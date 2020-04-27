@@ -1,0 +1,193 @@
+@import "../../sass/abstracts/abstracts.scss";
+
+.header {
+    background-color: $color-white;
+    color: $color-secondary;
+    .container {
+        display: flex;
+        padding: 0 rem(60) 0 rem(82);
+        height: rem(147);
+        @media only screen and (max-width: 67.5em) {
+            padding: 0 0 0 rem(22);
+        }
+
+        @include respond("large") {
+            height: rem(100);
+        }
+    }
+}
+
+.logo {
+    display: block;
+    height: 100%;
+    padding: rem(19) 16px 12px 0;
+    @include respond("large") {
+        padding: 12px 10px 12px 0;
+    }
+    img {
+        display: block;
+        height: 100%;
+        width: auto;
+    }
+}
+
+.title {
+    padding: 16px;
+    border-left: 1px solid currentColor;
+    font-weight: 500;
+    font-size: rem(24);
+    letter-spacing: 4px;
+    flex: 1;
+    align-self: flex-end;
+    margin-bottom: rem(27);
+    min-width: rem(320);
+    @include respond("large") {
+        align-self: center;
+        min-width: unset;
+        margin-bottom: 0;
+        letter-spacing: 2px;
+        padding: 6px 10px;
+        font-size: rem(20);
+    }
+}
+
+.nav_button {
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 22px;
+    @include respond("medium") {
+        display: block;
+        justify-self: flex-end;
+        align-self: center;
+    }
+}
+
+.nav_icon,
+.nav_icon::before,
+.nav_icon::after {
+    width: 100%;
+    height: 3px;
+    background-color: $color-primary;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.nav_icon {
+    @include center-by-absolute;
+}
+
+.nav_icon::before,
+.nav_icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all 0.2s;
+}
+
+.nav_icon::before {
+    top: -8px;
+}
+
+.nav_icon::after {
+    top: 8px;
+}
+
+.expand {
+    .nav_icon {
+        background-color: transparent;
+    }
+    .nav_icon::before {
+        transform: rotate(135deg);
+        top: 0;
+    }
+    .nav_icon::after {
+        transform: rotate(-135deg);
+        top: 0;
+    }
+}
+
+.nav_list {
+    display: flex;
+    font-size: rem(21);
+    font-weight: 400;
+    height: 100%;
+    @include respond("large") {
+        font-size: rem(18);
+    }
+    @include respond("medium") {
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        background-color: $color-white;
+        position: absolute;
+        left: 0;
+        top: rem(99);
+        padding-top: 4rem;
+        z-index: 2;
+        font-size: rem(26);
+        color: $color-secondary;
+        transform: translateX(-102%);
+        transition: transform 1s;
+        backface-visibility: hidden;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    }
+    @include respond("small") {
+        font-size: rem(26);
+    }
+    li {
+        margin-left: 10px;
+        height: 100%;
+        padding: rem(78) rem(22) 0;
+        line-height: 1;
+        letter-spacing: 2px;
+        @media only screen and (max-width: 81.25em) {
+            margin-left: 0;
+            padding: rem(78) rem(16) 0;
+        }
+        @include respond("large") {
+            padding: 0 rem(16);
+            display: flex;
+        }
+        @include respond("medium") {
+            margin: rem(24);
+            text-align: center;
+            display: block;
+            padding: 10px;
+            height: auto;
+        }
+        & a {
+            position: relative;
+            @include respond("large") {
+                align-self: center;
+            }
+        }
+        & a::after {
+            @include underline;
+            margin-top: 5px;
+        }
+
+        &:hover {
+            color: $color-primary;
+            & a::after {
+                width: 100%;
+                left: 0;
+            }
+        }
+        &.active {
+            color: $color-white;
+            background-color: $color-primary;
+            @include respond("medium") {
+                color: $color-primary;
+                background-color: $color-white;
+            }
+        }
+    }
+}
+
+.open {
+    transform: translateX(0);
+}

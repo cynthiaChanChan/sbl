@@ -1,0 +1,60 @@
+@import "../../sass/abstracts/abstracts.scss";
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    padding: rem(60) 20px;
+
+    & > * {
+        margin: 0 rem(55);
+    }
+    .sectionHeading {
+        margin: -1.3rem 0 rem(47);
+    }
+}
+
+.productImg {
+    max-width: rem(692);
+
+    img {
+        width: 100%;
+    }
+}
+
+.icon {
+    height: rem(105);
+    margin-bottom: rem(29);
+    img {
+        height: 100%;
+    }
+}
+
+.content {
+    font-size: rem(32);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    color: $color-shadow;
+    display: inline-block;
+    line-height: 1;
+    &::after {
+        content: "";
+        display: block;
+        background-color: $color-primary;
+        height: rem(8);
+        width: 100%;
+        margin: rem(16) 0;
+    }
+}
+
+.info {
+    color: $color-text;
+    text-align: center;
+    line-height: 1.5;
+}

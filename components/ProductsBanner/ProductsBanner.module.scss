@@ -1,0 +1,80 @@
+@import "../../sass/abstracts/abstracts";
+
+.products_banner {
+    background-image: url("/banner_product.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: rem(152) 0 rem(107);
+    text-align: center;
+}
+
+.heading {
+    color: $color-white;
+    font-size: rem(76);
+    letter-spacing: -5px;
+    text-shadow: 0px 10px 4px rgba(21, 21, 25, 0.75);
+    -webkit-text-stroke: 2px $color-primary;
+    @include respond("large") {
+        font-size: rem(58);
+    }
+    @include respond("medium") {
+        font-size: rem(42);
+        letter-spacing: -3px;
+        -webkit-text-stroke: 1px $color-primary;
+        text-shadow: 0px 5px 4px rgba(21, 21, 25, 0.75);
+    }
+    @include respond("extra-small") {
+        font-size: rem(36);
+    }
+    & span:last-child {
+        display: block;
+        font-size: rem(99);
+        font-weight: 900;
+        letter-spacing: rem(25);
+        padding-left: rem(25);
+        line-height: 1.4;
+        @include respond("large") {
+            font-size: rem(74);
+            letter-spacing: rem(16);
+            padding-left: rem(16);
+        }
+        @include respond("medium") {
+            font-size: rem(52);
+            line-height: 1.2;
+        }
+        @include respond("extra-small") {
+            font-size: rem(41);
+        }
+    }
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+.item {
+    margin: 0 rem(12);
+    padding: rem(8) rem(17) rem(15) rem(23);
+    line-height: 1;
+    letter-spacing: 6px;
+    font-size: rem(32);
+    font-weight: 700;
+    color: rgba($color-white, 0.8);
+    background-color: $color-primary;
+    border-radius: 26px;
+    @include respond("large") {
+        font-size: rem(24);
+    }
+    @include respond("medium") {
+        font-size: rem(16);
+        letter-spacing: 3px;
+        padding: rem(8) rem(10) rem(10) rem(13);
+        margin: 0 rem(6);
+    }
+    @include respond("extra-small") {
+        letter-spacing: 1px;
+        margin: 0 rem(3);
+    }
+}

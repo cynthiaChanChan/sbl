@@ -1,0 +1,16 @@
+@import "../../sass/abstracts/abstracts.scss";
+
+.client_list {
+    & > :not(:last-child) > :first-child {
+        border-bottom: 1px solid #d5d2de;
+    }
+
+    @include respond("small") {
+        & > :nth-child(even) > :first-child {
+            align-items: flex-end;
+            & > :first-child :first-child {
+                right: 0;
+            }
+        }
+    }
+}

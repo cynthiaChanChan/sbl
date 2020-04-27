@@ -1,0 +1,44 @@
+@import "../../sass/abstracts/abstracts.scss";
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    padding: rem(60) 20px;
+
+    & > * {
+        margin: 0 rem(55);
+    }
+}
+
+.productImg {
+    max-width: rem(594);
+
+    img {
+        width: 100%;
+    }
+}
+
+.list {
+    color: $color-secondary-4;
+    position: relative;
+
+    li {
+        position: relative;
+        margin-top: 1rem;
+        padding-left: 1rem;
+        &::before {
+            content: "";
+            background-color: $color-primary;
+            display: block;
+            height: rem(6);
+            width: rem(6);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

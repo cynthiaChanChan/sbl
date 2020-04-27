@@ -1,0 +1,108 @@
+@import "../../sass/abstracts/abstracts.scss";
+
+.client {
+    display: flex;
+    justify-content: center;
+}
+
+.background {
+    background-image: url("/background_hardware.jpg");
+    background-size: cover;
+    background-position: bottom;
+}
+
+.container {
+    max-width: rem(1237);
+    display: flex;
+    padding: rem(93) 20px rem(100);
+    @include respond("medium") {
+        padding: rem(63) 20px rem(70);
+    }
+    @media only screen and (max-width: 63.2em) {
+        padding: rem(43) 20px rem(50);
+    }
+    @include respond("small") {
+        flex-direction: column;
+    }
+}
+
+.imgBox {
+    width: rem(426);
+    padding: rem(27) 0 0 rem(27);
+    margin-right: rem(33);
+    position: relative;
+    @include respond("large") {
+        padding: rem(17) 0 0 rem(17);
+        margin-right: rem(22);
+    }
+    &::before {
+        content: "";
+        display: block;
+        width: rem(54);
+        height: rem(54);
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: $color-primary;
+        z-index: -1;
+        @include respond("large") {
+            width: rem(34);
+            height: rem(34);
+        }
+    }
+    img {
+        width: 100%;
+    }
+}
+
+.textBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-width: rem(716);
+    @include respond("small") {
+        margin-top: 23px;
+    }
+}
+
+.heading {
+    font-size: rem(48);
+    font-weight: 700;
+    color: $color-dark-3;
+    letter-spacing: rem(10);
+    @include respond("large") {
+        font-size: rem(28);
+    }
+    @media only screen and (max-width: 63.2em) {
+        font-size: rem(22);
+        letter-spacing: 3px;
+    }
+}
+
+.line {
+    height: rem(9);
+    width: rem(297);
+    background-color: $color-primary;
+    margin: rem(13) 0;
+    @include respond("large") {
+        width: rem(200);
+        height: rem(4);
+    }
+    @media only screen and (max-width: 63.2em) {
+        width: rem(160);
+        height: 2px;
+        margin: rem(8) 0;
+    }
+}
+
+.content {
+    font-size: rem(24);
+    line-height: 1.67;
+    color: #7c7c7c;
+    @include respond("large") {
+        font-size: rem(20);
+    }
+    @media only screen and (max-width: 63.2em) {
+        font-size: rem(17);
+    }
+}

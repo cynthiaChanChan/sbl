@@ -1,0 +1,11 @@
+@import "../../sass/abstracts/abstracts.scss";
+
+.products {
+    & > *:nth-of-type(even) {
+        flex-direction: row-reverse;
+
+        @include respond("small") {
+            flex-direction: column;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@import "../../sass/abstracts/abstracts.scss";
+
+.solutions {
+    padding: rem(83) 0 rem(100);
+    @include respond("large") {
+        padding: rem(60);
+    }
+    .container {
+        text-align: center;
+    }
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: rem(40) rem(-19) 0;
+    text-align: left;
+    @include respond("large") {
+        margin-top: 0;
+    }
+    & > * {
+        margin: rem(45) rem(19) 0;
+    }
+}
+
+.product {
+    background-color: $color-secondary-2;
+    .list {
+        & > * {
+            background-color: $color-white;
+            padding: rem(88) rem(16) rem(49);
+            h3 {
+                color: $color-black-3;
+            }
+        }
+    }
+}

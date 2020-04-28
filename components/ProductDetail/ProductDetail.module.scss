@@ -8,16 +8,63 @@
     background-position: center;
     padding: rem(60) 20px;
 
+    @include respond("medium") {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    @include respond("small") {
+        justify-content: space-between;
+        position: relative;
+    }
+
+    @include respond("extra-small") {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     & > * {
         margin: 0 rem(55);
+
+        @include respond("medium") {
+            margin: 0 rem(45);
+        }
+
+        @include respond("medium") {
+            margin: 0 20px;
+        }
+
+        @include respond("extra-small") {
+            margin: 0;
+        }
     }
     .sectionHeading {
         margin: -1.3rem 0 rem(47);
+        @include respond("small") {
+            position: absolute;
+        }
+
+        @include respond("extra-small") {
+            h3,
+            h2 {
+                font-size: rem(25);
+            }
+        }
     }
 }
 
 .productImg {
     max-width: rem(692);
+
+    @media only screen and (max-width: 86.25em) {
+        max-width: 40%;
+    }
+
+    @include respond("small") {
+        & > :nth-child(2) {
+            margin-top: 6rem;
+        }
+    }
 
     img {
         width: 100%;
@@ -27,6 +74,24 @@
 .icon {
     height: rem(105);
     margin-bottom: rem(29);
+
+    @include respond("large") {
+        height: rem(80);
+    }
+
+    @include respond("medium") {
+        height: rem(70);
+    }
+
+    @include respond("small") {
+        height: rem(50);
+        margin-bottom: rem(19);
+    }
+
+    @include respond("extra-small") {
+        height: rem(40);
+    }
+
     img {
         height: 100%;
     }
@@ -37,6 +102,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include respond("extra-large") {
+        font-size: rem(26);
+    }
+
+    @include respond("large") {
+        font-size: rem(21);
+    }
+
+    @include respond("medium") {
+        font-size: rem(18);
+    }
+
+    @include respond("extra-small") {
+        font-size: rem(16);
+    }
 }
 
 .title {
@@ -50,6 +131,10 @@
         height: rem(8);
         width: 100%;
         margin: rem(16) 0;
+        @include respond("small") {
+            margin: rem(10) 0;
+            height: rem(5);
+        }
     }
 }
 

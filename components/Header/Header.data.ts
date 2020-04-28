@@ -6,7 +6,7 @@ type NavItem = {
 const navList: NavItem[] = [
     {
         content: "产品服务",
-        url: "/services",
+        url: "/products",
     },
     {
         content: "客户案例",
@@ -14,7 +14,7 @@ const navList: NavItem[] = [
     },
     {
         content: "关于我们",
-        url: "/about-us",
+        url: "/about",
     },
     {
         content: "联系我们",

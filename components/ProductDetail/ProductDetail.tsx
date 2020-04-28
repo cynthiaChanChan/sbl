@@ -12,7 +12,7 @@ const ProductDetail = ({
     const style = background ? { backgroundImage: `url(${background})` } : {};
     return (
         <div className={styles.box} style={style}>
-            <div>
+            <div className={styles.productImg}>
                 {sectionHeading && (
                     <Heading
                         heading={{
@@ -23,9 +23,7 @@ const ProductDetail = ({
                         className={styles.sectionHeading}
                     />
                 )}
-                <div className={styles.productImg}>
-                    <img src={img} alt="product image" />
-                </div>
+                <img src={img} alt="product image" />
             </div>
             <div className={styles.content}>
                 <div className={styles.icon}>

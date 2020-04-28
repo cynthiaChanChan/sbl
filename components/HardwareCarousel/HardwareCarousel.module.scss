@@ -1,0 +1,138 @@
+@import "../../sass/abstracts/abstracts.scss";
+
+$color-border: #dfdfdf;
+
+.carousel {
+    padding: rem(69) 20px 3rem;
+    max-width: 75.75rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 43%;
+    width: 100%;
+}
+
+.thumbnail {
+    background-color: $color-white;
+    border: solid 1px $color-border;
+    padding: 0 rem(24);
+    width: rem(238);
+    height: rem(222);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 100%;
+    }
+
+    &.wide img {
+        width: auto;
+        height: 80%;
+    }
+}
+
+.slider {
+    margin: rem(70) auto 0;
+    max-width: rem(1020);
+
+    .prevArrow,
+    .nextArrow {
+        border-radius: 50%;
+        width: rem(69);
+        height: rem(69);
+        background-color: rgba($color-primary, $alpha: 0.5);
+        padding: rem(12);
+        transition: all 0.2s;
+        z-index: 2;
+        transform: translateY(-4.2rem);
+
+        &:hover {
+            background-color: rgba($color-primary, $alpha: 0.8);
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+.prevArrow img {
+    transform: rotate(180deg);
+    height: 100%;
+}
+
+.nextArrow img {
+    height: 100%;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2.5rem;
+}
+
+.productImage {
+    background-color: $color-white;
+    border: solid 1px $color-border;
+    padding: 0 rem(51);
+    max-width: rem(356);
+    display: flex;
+    align-items: center;
+    img {
+        width: 100%;
+    }
+
+    &.wide img {
+        width: auto;
+        height: 70%;
+    }
+}
+
+.content {
+    border: solid 1px $color-border;
+    border-left: none;
+    background-color: $color-secondary-2;
+    max-width: rem(519);
+    padding: rem(55);
+    color: $color-black-3;
+}
+
+.title {
+    display: inline-block;
+    font-size: rem(21);
+    font-weight: 500;
+    &::after {
+        content: "";
+        display: block;
+        background-color: $color-primary;
+        height: rem(3);
+        width: 100%;
+        margin-top: rem(14);
+    }
+}
+
+.list {
+    position: relative;
+
+    li {
+        position: relative;
+        margin-top: 1rem;
+        padding-left: rem(10);
+        &::before {
+            content: "";
+            background-color: $color-primary;
+            display: block;
+            height: rem(6);
+            width: rem(6);
+            position: absolute;
+            left: 0;
+            top: rem(6);
+        }
+    }
+}

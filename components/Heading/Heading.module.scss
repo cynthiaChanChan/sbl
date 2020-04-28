@@ -6,6 +6,9 @@
     &.border {
         padding-left: rem(25);
         position: relative;
+        @include respond("small") {
+            padding-left: rem(18);
+        }
         &::before {
             content: "";
             display: block;

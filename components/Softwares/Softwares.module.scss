@@ -3,8 +3,10 @@
 .products {
     & > *:nth-of-type(even) {
         flex-direction: row-reverse;
+    }
 
-        @include respond("small") {
+    @include respond("small") {
+        & > .detailList {
             flex-direction: column;
         }
     }

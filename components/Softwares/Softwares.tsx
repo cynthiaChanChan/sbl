@@ -10,7 +10,13 @@ const Softwares = () => {
             {productsData.map(
                 (product, index): React.ReactNode => {
                     if (product.list) {
-                        return <DetailWithList product={product} key={index} />;
+                        return (
+                            <DetailWithList
+                                product={product}
+                                key={index}
+                                className={styles.detailList}
+                            />
+                        );
                     } else {
                         return <ProductDetail product={product} key={index} />;
                     }

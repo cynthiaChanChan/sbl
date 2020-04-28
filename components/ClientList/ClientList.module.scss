@@ -8,7 +8,8 @@
     @include respond("small") {
         & > :nth-child(even) > :first-child {
             align-items: flex-end;
-            & > :first-child :first-child {
+            & > :first-child::before {
+                left: unset;
                 right: 0;
             }
         }

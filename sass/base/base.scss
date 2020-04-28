@@ -88,3 +88,42 @@ textarea:focus {
     padding-left: 20px;
     padding-right: 20px;
 }
+
+//overwrite react-slick styles
+
+.slick-slider {
+    .slick-prev::before,
+    .slick-next::before {
+        font-size: 0;
+    }
+
+    .slick-prev.slick-disabled,
+    .slick-next.slick-disabled {
+        background-color: transparent;
+        cursor: initial;
+        &:hover {
+            background-color: transparent;
+        }
+        img {
+            display: none;
+        }
+    }
+
+    .slick-dots {
+        li {
+            margin: 0;
+        }
+        li button:before {
+            content: "";
+            width: rem(14);
+            height: rem(13);
+            background-color: #fdcebb;
+            opacity: 1;
+        }
+
+        li.slick-active button:before {
+            content: "";
+            background-color: $color-primary;
+        }
+    }
+}

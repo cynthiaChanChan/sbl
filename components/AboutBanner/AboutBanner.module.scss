@@ -1,0 +1,9 @@
+@import "../../sass/abstracts/abstracts.scss";
+
+.banner {
+    height: rem(552);
+    background: top / cover url("/banner_about.jpg");
+    @include respond("small") {
+        height: rem(352);
+    }
+}

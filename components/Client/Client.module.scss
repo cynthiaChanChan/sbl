@@ -35,6 +35,10 @@
         padding: rem(17) 0 0 rem(17);
         margin-right: rem(22);
     }
+    @include respond("small") {
+        margin-right: 0;
+        padding: rem(17) rem(17) 0;
+    }
     &::before {
         content: "";
         display: block;
@@ -44,14 +48,15 @@
         left: 0;
         top: 0;
         background-color: $color-primary;
-        z-index: -1;
         @include respond("large") {
             width: rem(34);
             height: rem(34);
         }
     }
     img {
+        position: relative;
         width: 100%;
+        z-index: 1;
     }
 }
 

@@ -112,6 +112,9 @@ textarea:focus {
     .slick-dots {
         li {
             margin: 0;
+            @include respond("small") {
+                margin: 0 -2px;
+            }
         }
         li button:before {
             content: "";
@@ -119,6 +122,11 @@ textarea:focus {
             height: rem(13);
             background-color: #fdcebb;
             opacity: 1;
+
+            @include respond("small") {
+                width: rem(10);
+                height: rem(9);
+            }
         }
 
         li.slick-active button:before {

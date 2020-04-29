@@ -9,6 +9,7 @@ export type HardwareData = {
     list: string[];
     image: string;
     imageWide?: boolean;
+    imageSmall?: boolean;
 };
 
 const hardwaresData: HardwareData[] = [
@@ -23,34 +24,23 @@ const hardwaresData: HardwareData[] = [
             "精巧时尚、简洁实用、安全稳定",
         ],
         image: "./terminal.png",
+        imageSmall: true,
     },
     {
         id: 2,
-        title: "高精度定位分体式GNSS接收机",
+        title: "测量型北斗天线",
         list: [
-            "自主核心技术,可单系统定位，也可多系统联合定位",
-            "内嵌自主可控的高精度GNSS板卡，支持定制报文",
-            "具有双系统RTK解算引擎，支持短、中、长基线RTK功能",
-            "支持以太网、GSM/GPRS通讯、支持GNSS/INS组合导航",
-            "高度灵活的分体式接收机、天线设计",
-            "体积小，功耗低于2.5W",
+            "多星多频外置式测量天线",
+            "多馈点设计，降低测量误差",
+            "单元增益高搜星信号强",
+            "抗多径扼流板，高精度接收信号",
+            "防水、防紫外线外罩，为长期的野外工作提供保障",
         ],
-        image: "./gnss01.png",
+        image: "./cable.png",
+        imageSmall: true,
     },
     {
         id: 3,
-        title: "高精度定位定向GNSS接收机",
-        list: [
-            "内嵌自主研发的BDS、GPS、GLONASS多模多频GNSS板卡，可单系统定位，也可联合RTK定位",
-            "双天线输入，单套设备可实现高精度RTK定位坐标、方位角和俯仰角（或横滚角）测量",
-            "支持PJK平面坐标输出，无需第三方软件做投影转换",
-            "支持以太网、GSM/GPRS通讯，支持GNSS/INS组合导航",
-            "体积小，功耗低于2.5W",
-        ],
-        image: "./gnss02.png",
-    },
-    {
-        id: 4,
         title: "智能收发一体中继电台",
         list: [
             "自主核心技术",
@@ -64,22 +54,35 @@ const hardwaresData: HardwareData[] = [
         imageWide: true,
     },
     {
-        id: 5,
-        title: "测量型北斗天线",
+        id: 4,
+        title: "高精度定位定向GNSS接收机",
         list: [
-            "多星多频外置式测量天线",
-            "多馈点设计，降低测量误差",
-            "单元增益高搜星信号强",
-            "抗多径扼流板，高精度接收信号",
-            "防水、防紫外线外罩，为长期的野外工作提供保障",
+            "内嵌自主研发的BDS、GPS、GLONASS多模多频GNSS板卡，可单系统定位，也可联合RTK定位",
+            "双天线输入，单套设备可实现高精度RTK定位坐标、方位角和俯仰角（或横滚角）测量",
+            "支持PJK平面坐标输出，无需第三方软件做投影转换",
+            "支持以太网、GSM/GPRS通讯，支持GNSS/INS组合导航",
+            "体积小，功耗低于2.5W",
         ],
-        image: "./cable.png",
+        image: "./gnss02.png",
+    },
+    {
+        id: 5,
+        title: "高精度定位分体式GNSS接收机",
+        list: [
+            "自主核心技术,可单系统定位，也可多系统联合定位",
+            "内嵌自主可控的高精度GNSS板卡，支持定制报文",
+            "具有双系统RTK解算引擎，支持短、中、长基线RTK功能",
+            "支持以太网、GSM/GPRS通讯、支持GNSS/INS组合导航",
+            "高度灵活的分体式接收机、天线设计",
+            "体积小，功耗低于2.5W",
+        ],
+        image: "./gnss01.png",
     },
 ];
 
 export const thumbnailsData: HardwareData[] = [
-    hardwaresData[1],
     hardwaresData[hardwaresData.length - 1],
+    hardwaresData[1],
 ];
 
 export default hardwaresData;

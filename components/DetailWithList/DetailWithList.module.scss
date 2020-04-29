@@ -6,12 +6,7 @@
     align-items: center;
     background-size: cover;
     background-position: center;
-    padding: rem(60) 20px;
-
-    @include respond("medium") {
-        padding-left: 0;
-        padding-right: 0;
-    }
+    padding: rem(60) 0;
 
     & > * {
         margin: 0 rem(55);

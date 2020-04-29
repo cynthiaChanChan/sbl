@@ -4,7 +4,7 @@ $color-border: #dfdfdf;
 
 .carousel {
     padding: rem(69) 20px 3rem;
-    max-width: 75.75rem;
+    max-width: 77rem;
     margin: 0 auto;
     position: relative;
 }
@@ -13,8 +13,23 @@ $color-border: #dfdfdf;
     display: flex;
     justify-content: space-between;
     position: absolute;
-    top: 43%;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
+    padding: 0 20px;
+    @include respond("large") {
+        top: 47%;
+    }
+
+    @include respond("medium") {
+        top: 42%;
+    }
+
+    @include respond("small") {
+        top: 31%;
+        padding: 0 10px;
+    }
 }
 
 .thumbnail {
@@ -26,6 +41,22 @@ $color-border: #dfdfdf;
     display: flex;
     align-items: center;
     justify-content: center;
+    @include respond("large") {
+        width: rem(200);
+        height: rem(190);
+    }
+
+    @include respond("small") {
+        width: rem(150);
+        height: rem(145);
+        padding: 0 10px;
+    }
+
+    @include respond("extra-small") {
+        width: rem(120);
+        height: rem(115);
+    }
+
     img {
         width: 100%;
     }
@@ -39,7 +70,12 @@ $color-border: #dfdfdf;
 .slider {
     margin: rem(70) auto 0;
     max-width: rem(1020);
-
+    @include respond("large") {
+        max-width: 94%;
+    }
+    @include respond("extra-small") {
+        margin-top: 3rem;
+    }
     .prevArrow,
     .nextArrow {
         border-radius: 50%;
@@ -50,6 +86,15 @@ $color-border: #dfdfdf;
         transition: all 0.2s;
         z-index: 2;
         transform: translateY(-4.2rem);
+        @include respond("medium") {
+            width: rem(55);
+            height: rem(55);
+        }
+
+        @include respond("medium") {
+            width: rem(45);
+            height: rem(45);
+        }
 
         &:hover {
             background-color: rgba($color-primary, $alpha: 0.8);
@@ -74,23 +119,67 @@ $color-border: #dfdfdf;
 .card {
     display: flex;
     justify-content: center;
-    padding-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    @include respond("large") {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    @include respond("small") {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @include respond("extra-small") {
+        margin-bottom: 10px;
+    }
 }
 
 .productImage {
     background-color: $color-white;
     border: solid 1px $color-border;
     padding: 0 rem(51);
-    max-width: rem(356);
+    max-width: rem(354);
     display: flex;
     align-items: center;
+    justify-content: center;
+    @include respond("large") {
+        max-width: rem(260);
+        padding: 0 rem(30);
+    }
+    @include respond("medium") {
+        max-width: 30%;
+        padding: 0 10px;
+    }
+    @include respond("small") {
+        width: 80%;
+        max-width: unset;
+        padding: 0.5rem 14%;
+    }
+
+    @include respond("extra-small") {
+        width: 86%;
+    }
     img {
         width: 100%;
     }
 
     &.wide img {
         width: auto;
-        height: 70%;
+        height: 12rem;
+
+        @include respond("small") {
+            height: 10rem;
+        }
+
+        @include respond("extra-small") {
+            height: 8rem;
+        }
+    }
+
+    &.small img {
+        @include respond("small") {
+            padding: 2rem 0;
+        }
     }
 }
 
@@ -98,9 +187,32 @@ $color-border: #dfdfdf;
     border: solid 1px $color-border;
     border-left: none;
     background-color: $color-secondary-2;
-    max-width: rem(519);
+    max-width: rem(521);
     padding: rem(55);
+    padding-right: rem(35);
     color: $color-black-3;
+
+    @include respond("large") {
+        max-width: rem(450);
+        padding: rem(30);
+    }
+
+    @include respond("medium") {
+        max-width: 54%;
+    }
+
+    @include respond("small") {
+        max-width: unset;
+        width: 80%;
+        padding: rem(35);
+        border: solid 1px $color-border;
+        border-top: none;
+    }
+
+    @include respond("extra-small") {
+        padding: 20px 10px;
+        width: 86%;
+    }
 }
 
 .title {
@@ -115,10 +227,17 @@ $color-border: #dfdfdf;
         width: 100%;
         margin-top: rem(14);
     }
+    @include respond("extra-small") {
+        font-size: 16px;
+    }
 }
 
 .list {
     position: relative;
+
+    @include respond("extra-small") {
+        font-size: 12px;
+    }
 
     li {
         position: relative;

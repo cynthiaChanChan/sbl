@@ -15,14 +15,16 @@ type HardwareCardProps = {
 };
 
 const HardwareCard = ({
-    card: { title, image, list, imageWide },
+    card: { title, image, list, imageWide, imageSmall },
 }: HardwareCardProps) => {
     return (
         <div className={styles.card}>
             <div
                 className={`${styles.productImage} ${
                     imageWide ? styles.wide : ""
-                }`}
+                }
+                    ${imageSmall ? styles.small : ""}
+                `}
             >
                 <img src={image} alt="hardware" />
             </div>
@@ -82,12 +84,12 @@ const HardwareCarousel = () => {
                 setThumbnails(thumbnailsData);
                 return;
             } else if (current === hardwaresData.length - 1) {
-                setThumbnails([hardwaresData[0], hardwaresData[current - 1]]);
+                setThumbnails([hardwaresData[current - 1], hardwaresData[0]]);
                 return;
             }
             setThumbnails([
-                hardwaresData[current + 1],
                 hardwaresData[current - 1],
+                hardwaresData[current + 1],
             ]);
         },
     };

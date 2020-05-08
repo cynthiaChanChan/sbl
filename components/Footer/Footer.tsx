@@ -1,12 +1,21 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useCallback, useState } from "react";
+import VisibilitySensor from "react-visibility-sensor";
 import styles from "./Footer.module.scss";
+import GoTopButton from "../GoTopButton/GoTopButton";
 
 const Footer = () => {
     const year = new Date().getFullYear();
     const contactEle = useRef<null | HTMLElement>(null);
     const router = useRouter();
+    const [isElemVisible, setIsElemVisible] = useState(false);
+    const handleVisibilityChange = useCallback(
+        (isVisible: boolean): void => {
+            setIsElemVisible(isVisible);
+        },
+        [isElemVisible]
+    );
     useEffect(() => {
         if (
             router.query.section === "contact" &&
@@ -26,12 +35,15 @@ const Footer = () => {
             <div className={`${styles.content} container`}>
                 <div className={styles.item}>
                     <h6>关于我们</h6>
+
                     <p>
                         广州驾悦信息科技有限公司，致力于在驾培行业领域进行培训优化、服务升级、品牌策划，驾培智能化多维度整合，力图打造新一代智慧驾培服务。
                     </p>
-                    <p>
-                        「识伯乐」是公司旗下自主研发的智能驾培教学管理系统，拥有国内领先专利技术。集高科技设备，高精度智能模拟教学系统、数据分析管理系统，为驾校的运营管理提供一体化解决方案。
-                    </p>
+                    <VisibilitySensor onChange={handleVisibilityChange}>
+                        <p>
+                            「识伯乐」是驾悦旗下自主研发的智能驾培教学管理系统，拥有国内领先专利技术。集高科技设备，高精度智能模拟教学系统、数据分析管理系统，为驾校的运营管理提供一体化解决方案。
+                        </p>
+                    </VisibilitySensor>
                 </div>
                 <div className={styles.item}>
                     <h6>联系我们</h6>
@@ -81,7 +93,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <a
-                                href="http://ad.i-driving.cn"
+                                href="http://jy.i-driving.cn"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -111,6 +123,7 @@ const Footer = () => {
                 {year + 3}
                 &nbsp;&nbsp;i-driving&nbsp;&nbsp;识伯乐&nbsp;&nbsp;版权所有
             </div>
+            <GoTopButton isvisible={isElemVisible} />
         </footer>
     );
 };

@@ -41,7 +41,7 @@
 }
 
 .contentBox {
-    max-width: 80%;
+    max-width: 83%;
     margin: 0 auto;
     padding: 0 20px;
     @include respond("large") {
@@ -89,6 +89,7 @@
 }
 
 .company__text {
+    text-align: justify;
     margin: rem(34) 0 rem(40);
     @include respond("small") {
         margin: rem(14) 0 rem(20);

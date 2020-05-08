@@ -7,17 +7,21 @@
     padding: rem(88) rem(40) rem(49);
     background-color: $color-secondary-2;
     position: relative;
-    @include respond("large") {
+    @media only screen and (max-width: 81.7em) {
         width: rem(300);
+    }
+    @include respond("large") {
         padding: rem(68) rem(20) rem(29);
     }
+
+    @include respond("medium") {
+        width: rem(230);
+    }
     @include respond("small") {
-        width: rem(270);
+        padding: rem(40) rem(10);
+        width: 45%;
     }
 
-    @include respond("extra-small") {
-        padding-top: rem(45);
-    }
     &::before {
         content: "";
         display: block;
@@ -28,14 +32,21 @@
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: $color-primary;
+        @include respond("medium") {
+            width: 70%;
+        }
+        @include respond("small") {
+            width: 80%;
+        }
     }
 }
 
 .imgBox {
     height: rem(120);
-    @include respond("extra-large") {
-        height: rem(100);
+    @media only screen and (max-width: 81.7em) {
+        height: rem(80);
     }
+
     @include respond("medium") {
         height: rem(60);
     }
@@ -51,7 +62,7 @@
     color: $color-primary;
     margin: rem(20);
     text-align: center;
-    @include respond("extra-large") {
+    @media only screen and (max-width: 81.7em) {
         font-size: rem(30);
     }
     @include respond("medium") {
@@ -67,8 +78,8 @@
     font-size: rem(24);
     line-height: 1.33;
     flex: 1;
-    @include respond("extra-large") {
-        font-size: rem(20);
+    @media only screen and (max-width: 81.7em) {
+        font-size: rem(18);
     }
 
     @include respond("medium") {

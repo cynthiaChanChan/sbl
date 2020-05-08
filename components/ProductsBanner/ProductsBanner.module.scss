@@ -6,6 +6,10 @@
     background-position: center;
     padding: rem(152) 0 rem(107);
     text-align: center;
+
+    @include respond("medium") {
+        padding: rem(100) 0 rem(60);
+    }
 }
 
 .heading {
@@ -56,7 +60,7 @@
 
 .item {
     margin: 0 rem(12);
-    padding: rem(8) rem(17) rem(12) rem(23);
+    padding: rem(12) rem(17) rem(10) rem(23);
     line-height: 1;
     letter-spacing: 6px;
     font-size: rem(32);
@@ -70,7 +74,7 @@
     @include respond("medium") {
         font-size: rem(16);
         letter-spacing: 3px;
-        padding: rem(8) rem(10) rem(10) rem(13);
+        padding: rem(10) rem(10) rem(9) rem(13);
         margin: 0 rem(6);
     }
     @include respond("extra-small") {

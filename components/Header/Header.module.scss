@@ -13,13 +13,15 @@
     .container {
         display: flex;
         padding: 0 rem(60) 0 rem(82);
-        height: rem(147);
-        @media only screen and (max-width: 67.5em) {
-            padding: 0 0 0 rem(22);
+        height: rem(148);
+        @include respond("extra-large") {
+            padding: 0 rem(60);
         }
-
         @include respond("large") {
             height: rem(100);
+        }
+        @media only screen and (max-width: 67.5em) {
+            padding: 0 0 0 rem(22);
         }
     }
 }
@@ -27,7 +29,7 @@
 .logo {
     display: block;
     height: 100%;
-    padding: rem(19) 16px 12px 0;
+    padding: rem(12) 16px rem(12) 0;
     @include respond("large") {
         padding: 12px 10px 12px 0;
     }
@@ -45,8 +47,7 @@
     font-size: rem(24);
     letter-spacing: 4px;
     flex: 1;
-    align-self: flex-end;
-    margin-bottom: rem(27);
+    align-self: center;
     min-width: rem(320);
     @include respond("large") {
         align-self: center;
@@ -119,9 +120,10 @@
 
 .nav_list {
     display: flex;
+    align-self: center;
     font-size: rem(21);
     font-weight: 400;
-    height: 100%;
+
     @include respond("large") {
         font-size: rem(18);
     }
@@ -146,18 +148,19 @@
         font-size: rem(26);
     }
     li {
+        text-align: center;
         margin-left: 10px;
-        height: 100%;
-        padding: rem(78) rem(22) 0;
+        padding: rem(17) rem(20);
         line-height: 1;
         letter-spacing: 2px;
+        border-radius: rem(28);
         @media only screen and (max-width: 81.25em) {
             margin-left: 0;
-            padding: rem(78) rem(16) 0;
+            padding: rem(15) rem(16);
         }
         @include respond("large") {
-            padding: 0 rem(16);
-            display: flex;
+            letter-spacing: 1px;
+            padding: rem(10);
         }
         @include respond("medium") {
             margin: rem(24);
@@ -173,16 +176,16 @@
             }
         }
         & a::after {
-            @include underline;
+            // @include underline;
             margin-top: 5px;
         }
 
         &:hover {
             color: $color-primary;
-            & a::after {
-                width: 100%;
-                left: 0;
-            }
+            // & a::after {
+            //     width: 100%;
+            //     left: 0;
+            // }
         }
         &.active {
             color: $color-white;

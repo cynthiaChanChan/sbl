@@ -5,8 +5,17 @@
     @include respond("large") {
         padding: rem(60);
     }
+    @include respond("medium") {
+        padding: rem(40);
+    }
+    @include respond("small") {
+        padding: rem(40) 0;
+    }
     .container {
         text-align: center;
+        @include respond("extra-small") {
+            padding: 0 10px;
+        }
     }
 }
 
@@ -19,8 +28,14 @@
     @include respond("large") {
         margin-top: 0;
     }
+    @include respond("small") {
+        margin: rem(20) -5px;
+    }
     & > * {
         margin: rem(45) rem(19) 0;
+        @include respond("small") {
+            margin: rem(20) 5px 0;
+        }
     }
 }
 
@@ -30,6 +45,17 @@
         & > * {
             background-color: $color-white;
             padding: rem(88) rem(16) rem(49);
+            @include respond("extra-large") {
+                width: rem(300);
+            }
+
+            @include respond("medium") {
+                padding: rem(48) rem(16) rem(28);
+            }
+            @include respond("small") {
+                width: rem(260);
+            }
+
             h3 {
                 color: $color-black-3;
             }

@@ -19,8 +19,8 @@
     }
 
     @include respond("extra-small") {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     & > * {
@@ -35,18 +35,26 @@
         }
 
         @include respond("extra-small") {
-            margin: 0;
+            margin: 0 5px;
         }
     }
     .sectionHeading {
         margin: -1.3rem 0 rem(47);
+
+        @include respond("large") {
+            h2 {
+                font-size: rem(30);
+            }
+        }
         @include respond("small") {
-            position: absolute;
+            margin-bottom: 0;
         }
 
         @include respond("extra-small") {
-            h3,
             h2 {
+                font-size: rem(20);
+            }
+            h3 {
                 font-size: rem(25);
             }
         }
@@ -61,8 +69,10 @@
     }
 
     @include respond("small") {
+        max-width: unset;
+        flex: 1;
         & > :nth-child(2) {
-            margin-top: 6rem;
+            margin-top: 3rem;
         }
     }
 

@@ -36,6 +36,9 @@
         @media only screen and (max-width: 79.99em) {
             width: 100%;
         }
+        @include respond("extra-small") {
+            padding: 0 10px;
+        }
     }
 }
 
@@ -111,6 +114,7 @@
     flex-wrap: wrap;
     @include respond("extra-small") {
         justify-content: center;
+        margin: 0 -5px;
     }
     & > * {
         margin: 0 1% rem(32);
@@ -120,7 +124,7 @@
         }
 
         @include respond("extra-small") {
-            margin: 0 5% rem(22);
+            margin: 0 5px rem(10);
             justify-content: center;
         }
     }

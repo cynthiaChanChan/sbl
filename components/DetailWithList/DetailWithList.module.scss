@@ -45,7 +45,7 @@
     }
 
     @include respond("small") {
-        max-width: 40%;
+        max-width: 80%;
         margin-bottom: 4rem;
     }
 
@@ -55,6 +55,14 @@
 }
 
 .content {
+    width: rem(530);
+    @include respond("large") {
+        width: 40%;
+    }
+
+    @include respond("medium") {
+        width: unset;
+    }
     @include respond("small") {
         align-self: flex-start;
     }
@@ -67,7 +75,7 @@
     li {
         position: relative;
         margin-top: 1rem;
-        padding-left: 1rem;
+        padding-left: 1.2rem;
         &::before {
             content: "";
             background-color: $color-primary;

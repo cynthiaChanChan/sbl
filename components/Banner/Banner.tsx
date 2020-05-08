@@ -7,8 +7,8 @@ const Banner = () => (
         <div className={`${styles.container} container`}>
             <div className={styles.titleBox}>
                 <h1 className={styles.heading}>
-                    <span>助力驾校，解决痛点</span>
-                    <span>让驾校利益最大化</span>
+                    <span>助力驾校解决痛点</span>
+                    <span>提升招生服务管理</span>
                 </h1>
             </div>
             <div className={styles.service}>

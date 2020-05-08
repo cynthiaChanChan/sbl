@@ -77,6 +77,7 @@ const HardwareCarousel = () => {
         speed: 200,
         cssEase: "linear",
         dots: true,
+        adaptiveHeight: true,
         prevArrow: <PrevArrow />,
         nextArrow: <NextArrow />,
         afterChange: (current: number) => {

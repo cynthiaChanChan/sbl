@@ -1,11 +1,28 @@
-import styles from "./Footer.module.scss";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useRef, useEffect } from "react";
+import styles from "./Footer.module.scss";
 
 const Footer = () => {
     const year = new Date().getFullYear();
-
+    const contactEle = useRef<null | HTMLElement>(null);
+    const router = useRouter();
+    useEffect(() => {
+        if (
+            router.query.section === "contact" &&
+            contactEle &&
+            contactEle.current
+        ) {
+            const offsetTop = contactEle.current.offsetTop;
+            window.scrollTo({
+                top: offsetTop - 72,
+                left: 0,
+                behavior: "smooth",
+            });
+        }
+    }, [router.query.section, router.query.status]);
     return (
-        <footer className={styles.footer} id="contact">
+        <footer className={styles.footer} id="contact" ref={contactEle}>
             <div className={`${styles.content} container`}>
                 <div className={styles.item}>
                     <h6>关于我们</h6>
@@ -37,7 +54,7 @@ const Footer = () => {
                         <li>
                             <a
                                 href="https://ditu.amap.com/place/B00140TY9J"
-                                target="_black"
+                                target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 地址：广州市天河区天河路490号壬丰大厦9层
@@ -56,7 +73,7 @@ const Footer = () => {
                         <li>
                             <a
                                 href="http://www.i-driving.cn"
-                                target="_black"
+                                target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 驾悦集团
@@ -65,7 +82,7 @@ const Footer = () => {
                         <li>
                             <a
                                 href="http://ad.i-driving.cn"
-                                target="_black"
+                                target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 驾悦传媒
@@ -74,7 +91,7 @@ const Footer = () => {
                         <li>
                             <a
                                 href="http://xc.3hxc.cn"
-                                target="_black"
+                                target="_blank"
                                 rel="noopener noreferrer"
                             >
                                 3号学车

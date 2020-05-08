@@ -18,7 +18,7 @@ const navList: NavItem[] = [
     },
     {
         content: "联系我们",
-        url: "/#contact",
+        url: "/?section=contact",
     },
 ];
 

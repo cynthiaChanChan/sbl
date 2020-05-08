@@ -3,6 +3,13 @@
 .header {
     background-color: $color-white;
     color: $color-secondary;
+    @include respond("medium") {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 10;
+        box-shadow: 0 2px 3px 0 rgba($color-black, 0.1);
+    }
     .container {
         display: flex;
         padding: 0 rem(60) 0 rem(82);

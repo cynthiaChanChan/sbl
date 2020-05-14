@@ -1,8 +1,12 @@
 @import "../../sass/abstracts/abstracts.scss";
 
+@import "../../sass/abstracts/abstracts.scss";
+
 .represent {
     background-color: $color-dark-3;
     display: flex;
+    position: relative;
+    z-index: 2;
 
     @include respond("medium") {
         flex-direction: column;
@@ -45,6 +49,9 @@
 .heading {
     border-left: 4px solid $color-primary;
     padding-left: 11px;
+    &.animation {
+        animation: pulse 1s;
+    }
 
     h5 {
         font-size: rem(32);

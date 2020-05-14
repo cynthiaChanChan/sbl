@@ -7,6 +7,7 @@
     padding: rem(88) rem(40) rem(49);
     background-color: $color-secondary-2;
     position: relative;
+
     @media only screen and (max-width: 81.7em) {
         width: rem(300);
     }
@@ -43,6 +44,7 @@
 
 .imgBox {
     height: rem(120);
+
     @media only screen and (max-width: 81.7em) {
         height: rem(80);
     }

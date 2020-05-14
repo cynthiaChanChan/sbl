@@ -3,8 +3,11 @@ import Head from "next/head";
 import Layout from "../components/Layout/Layout";
 import ClientsBanner from "../components/ClientsBanner/ClientsBanner";
 import ClientList from "../components/ClientList/ClientList";
+import { useContext } from "react";
+import { AppContext } from "../providers/app.provider";
 
 export default function Clients() {
+    const { title } = useContext(AppContext);
     return (
         <>
             <Head>
@@ -16,7 +19,7 @@ export default function Clients() {
                     name="keyword"
                     content="驾校，驾培协会，驾培机构，3号学车，中驾驾校，骏龙驾校，招生利器，学车潮流，智慧学车，高精度教学，驾校管理系统，模拟考试，驾校管理"
                 />
-                <title>识伯乐-客户案例</title>
+                <title>{title}</title>
             </Head>
             <Layout>
                 <ClientsBanner />

@@ -1,5 +1,7 @@
-import Heading from "../Heading/Heading";
+import VisibilitySensor from "react-visibility-sensor";
+import { useState, useCallback } from "react";
 
+import Heading from "../Heading/Heading";
 import styles from "./Product.module.scss";
 import { ProductData } from "../ProductsList/ProductsList.data";
 
@@ -9,6 +11,12 @@ type ProductProps = {
 
 const Product = ({ product }: ProductProps) => {
     const { heading, img, alt, list, background, subContent } = product;
+    const [isElemVisible, setIsElemVisible] = useState(false);
+
+    const handleChange = useCallback((isVisible: boolean): void => {
+        isVisible && setIsElemVisible(true);
+    }, []);
+
     return (
         <div
             className={styles.product}
@@ -17,15 +25,21 @@ const Product = ({ product }: ProductProps) => {
             <div className={styles.productImg}>
                 <img src={img} alt={alt} />
             </div>
-            <div className={styles.content}>
+            <div
+                className={`${styles.content} ${
+                    isElemVisible ? styles.animation : ""
+                }`}
+            >
                 <Heading heading={heading} />
-                <ul className={styles.list}>
-                    {list.map(
-                        (item, index): React.ReactNode => (
-                            <li key={index}>{item}</li>
-                        )
-                    )}
-                </ul>
+                <VisibilitySensor onChange={handleChange}>
+                    <ul className={styles.list}>
+                        {list.map(
+                            (item, index): React.ReactNode => (
+                                <li key={index}>{item}</li>
+                            )
+                        )}
+                    </ul>
+                </VisibilitySensor>
                 {subContent && (
                     <ul className={styles.subContent}>
                         {subContent.map(

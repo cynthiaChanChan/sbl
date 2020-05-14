@@ -19,6 +19,7 @@
     letter-spacing: -1px;
     -webkit-text-stroke: 2px $color-primary;
     text-shadow: 0px rem(5) rem(6) rgba(21, 21, 25, 0.75);
+    animation: moveInLeft 1s ease-out both;
     @include respond("large") {
         font-size: rem(69);
     }

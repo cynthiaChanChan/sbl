@@ -81,6 +81,7 @@
     text-shadow: 0 rem(4) rem(6) rgba(21, 21, 25, 0.94);
     -webkit-text-stroke: 2px $color-primary;
     z-index: 1;
+
     @include respond("extra-large") {
         font-size: rem(58);
     }
@@ -112,6 +113,7 @@
 .service {
     display: flex;
     flex-wrap: wrap;
+
     @include respond("extra-small") {
         justify-content: center;
         margin: 0 -5px;
@@ -127,5 +129,15 @@
             margin: 0 5px rem(10);
             justify-content: center;
         }
+    }
+}
+
+.animation {
+    .titleBox {
+        animation: moveInUp 1s ease-out both;
+    }
+
+    .service {
+        animation: moveInLeftTwo 1s ease-out both;
     }
 }

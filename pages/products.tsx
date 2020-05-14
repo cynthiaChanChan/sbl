@@ -6,8 +6,11 @@ import Solutions from "../components/Solutions/Solutions";
 import Represent from "../components/Represent/Represent";
 import Softwares from "../components/Softwares/Softwares";
 import HardwareCarousel from "../components/HardwareCarousel/HardwareCarousel";
+import { useContext } from "react";
+import { AppContext } from "../providers/app.provider";
 
 export default function Home() {
+    const { title } = useContext(AppContext);
     return (
         <>
             <Head>
@@ -19,7 +22,7 @@ export default function Home() {
                     name="keyword"
                     content="高精度，智能学车，智慧驾培，驾培管理，校长端，学员端，教练端，驾校管理系统，驾校OA研发系统，智能模拟考试设备，科目二模拟考试，科目三模拟考试，车载终端，GNSS，北斗天线，练车成绩，练车轨迹，练车记录，练车数据，培训计时，语音播报，智能评判"
                 />
-                <title>识伯乐-产品服务</title>
+                <title>{title}</title>
             </Head>
             <Layout>
                 <ProductsBanner />

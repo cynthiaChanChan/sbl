@@ -1,3 +1,6 @@
+import VisibilitySensor from "react-visibility-sensor";
+import { useState, useCallback } from "react";
+
 import styles from "./Client.module.scss";
 import { ClinetItem } from "../ClientList/ClientList.data";
 
@@ -7,6 +10,11 @@ type ClientProps = {
 
 const Client = ({ client }: ClientProps) => {
     const { imgUrl, hasBackground, title, content } = client;
+    const [isElemVisible, setIsElemVisible] = useState(false);
+
+    const handleChange = useCallback((isVisible: boolean): void => {
+        isVisible && setIsElemVisible(true);
+    }, []);
     return (
         <div
             className={`${styles.client} ${
@@ -17,8 +25,14 @@ const Client = ({ client }: ClientProps) => {
                 <div className={styles.imgBox}>
                     <img src={imgUrl} alt="car image" />
                 </div>
-                <div className={styles.textBox}>
-                    <h2 className={styles.heading}>{title}</h2>
+                <div
+                    className={`${styles.textBox} ${
+                        isElemVisible ? styles.animation : ""
+                    }`}
+                >
+                    <VisibilitySensor onChange={handleChange}>
+                        <h2 className={styles.heading}>{title}</h2>
+                    </VisibilitySensor>
                     <div className={styles.line} />
                     <p className={styles.content}>{content}</p>
                 </div>

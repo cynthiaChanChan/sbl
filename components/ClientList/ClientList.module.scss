@@ -4,14 +4,4 @@
     & > :not(:last-child) > :first-child {
         border-bottom: 1px solid #d5d2de;
     }
-
-    @include respond("small") {
-        & > :nth-child(even) > :first-child {
-            align-items: flex-end;
-            & > :first-child::before {
-                left: unset;
-                right: 0;
-            }
-        }
-    }
 }

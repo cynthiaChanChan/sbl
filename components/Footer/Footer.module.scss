@@ -1,5 +1,11 @@
 @import "../../sass/abstracts/abstracts.scss";
 
+.footer {
+    position: relative;
+    //Offsetting anchor hash tag links to adjust for fixed header
+    margin-top: -80px;
+}
+
 .footer .content {
     font-size: 13px;
     font-weight: 300;
@@ -9,7 +15,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 78.75rem;
-    position: relative;
 
     @media only screen and (max-width: 68.75em) {
         max-width: 100%;

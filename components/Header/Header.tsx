@@ -1,13 +1,15 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 import styles from "./Header.module.scss";
 import navList from "./Header.data";
+import { AppContext } from "../../providers/app.provider";
 
 const Header = () => {
     const router = useRouter();
     const [isClicked, setIsClicked] = useState(false);
+    const { setTitle } = useContext(AppContext);
 
     useEffect((): void => {
         const body = document.querySelector("body");
@@ -27,13 +29,8 @@ const Header = () => {
                 body.className = "";
             }
             setIsClicked(false);
-            if (href.includes("section")) {
-                const status = router.query.status === "true";
-                e.preventDefault();
-                router.push(`${href}&status=${!status}`);
-            }
         },
-        [isClicked]
+        [isClicked, router.query.section]
     );
 
     return (

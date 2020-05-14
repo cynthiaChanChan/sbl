@@ -8,6 +8,10 @@
     background-position: center;
     padding: rem(80) 20px;
 
+    h2 {
+        font-size: rem(45);
+    }
+
     @include respond("small") {
         flex-direction: column;
         background-position: bottom left;
@@ -46,6 +50,9 @@
     padding-left: 20px;
     @include respond("medium") {
         padding-left: 0;
+    }
+    &.animation ul {
+        animation: pulse 1s ease-out both;
     }
 }
 

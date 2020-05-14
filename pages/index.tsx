@@ -5,8 +5,11 @@ import Banner from "../components/Banner/Banner";
 import Solutions from "../components/Solutions/Solutions";
 import ProductsList from "../components/ProductsList/ProductsList";
 import Represent from "../components/Represent/Represent";
+import { useContext } from "react";
+import { AppContext } from "../providers/app.provider";
 
-const Products = () => {
+const Home = () => {
+    const { title } = useContext(AppContext);
     return (
         <>
             <Head>
@@ -18,7 +21,7 @@ const Products = () => {
                     name="keyword"
                     content="识伯乐，驾校，驾培，驾校服务，驾校宣传，高精度设备，模拟考试，语音播报，驾校管理，驾校系统，智能学车，驾校管理微信端，驾校硬件及软件，车辆管理，学员管理，教练管理，科二通过率，招生优势，练车成绩，练车记录，教练机器人，驾校培训，驾校报名，驾校财务管理，学车计时培训系统，驾校预约系统"
                 />
-                <title>识伯乐-首页</title>
+                <title>{title}</title>
             </Head>
             <Layout>
                 <Banner />
@@ -30,4 +33,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default Home;

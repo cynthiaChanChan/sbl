@@ -51,9 +51,18 @@
 
 @font-face {
     font-family: "SourceHanSansCN";
+    font-display: swap;
     font-style: normal;
     font-weight: 900;
-    src: local("SourceHanSansCN Heavy"),
-        url("/fonts/SourceHanSansCN-Heavy.woff") format("woff");
-    font-display: "swap";
+    src: url("//at.alicdn.com/t/webfont_qdra6o6k1k.eot"); /* IE9*/
+    src: url("//at.alicdn.com/t/webfont_qdra6o6k1k.eot?#iefix")
+            format("embedded-opentype"),
+        /* IE6-IE8 */ url("//at.alicdn.com/t/webfont_qdra6o6k1k.woff2")
+            format("woff2"),
+        url("//at.alicdn.com/t/webfont_qdra6o6k1k.woff") format("woff"),
+        /* chrome、firefox */ url("//at.alicdn.com/t/webfont_qdra6o6k1k.ttf")
+            format("truetype"),
+        /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url("//at.alicdn.com/t/webfont_qdra6o6k1k.svg#NotoSansHans-Black")
+            format("svg"); /* iOS 4.1- */
 }

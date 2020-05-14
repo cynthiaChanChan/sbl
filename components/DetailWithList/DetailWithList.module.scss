@@ -56,6 +56,10 @@
 
 .content {
     width: rem(530);
+    opacity: 0;
+    &.animation {
+        animation: popup 0.7s ease-in both;
+    }
     @include respond("large") {
         width: 40%;
     }
